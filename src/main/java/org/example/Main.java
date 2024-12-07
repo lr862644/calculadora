@@ -16,10 +16,16 @@ public class Main {
 
         Double resultadoMedia;
 
-
         Integer resultadoSoma;
 
         resultadoMedia = variaveis.calculaMedia(n1, n2, n3, n4);
         System.out.println(resultadoMedia);
+
+
+        Double total = Double.valueOf(variaveis.calculadora());
+
+        System.out.println(total);
+
     }
+
 }
