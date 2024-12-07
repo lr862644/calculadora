@@ -32,21 +32,19 @@ public class variaveis {
 
         String simbolo = scanner.nextLine();
 
-        try{
-            if(!(simbolo == "+" || simbolo == "-" || simbolo == "*" || simbolo == "/" )){
-            System.out.println("Simbolo incorreto");
-        }catch(){}
+        if(! (simbolo.equals("+") || simbolo.equals("-") || simbolo.equals("*") || simbolo.equals("/") ) ) {
+            throw new NumberFormatException("Simbolo incorreto");
+        }
+
 
         System.out.println("O simbolo escolhido foi " + simbolo);
         System.out.println("Agora digite o primeiro valor a ser calculado: ");
-        String num1 = scanner.nextLine();
+        Double valor1 = scanner.nextDouble();
 
         System.out.println("Agora digite o segundo valor a ser calculado: ");
-        String num2 = scanner.nextLine();
+        Double valor2 = scanner.nextDouble();
 
         if (simbolo.equals("+")){
-            Double valor1 = Double.parseDouble(num1);
-            Double valor2 = Double.parseDouble(num2);
 
             Double soma = valor1 + valor2;
 
@@ -55,8 +53,6 @@ public class variaveis {
             return soma;
         }
         if(simbolo.equals("-")){
-            Double valor1 = Double.parseDouble(num1);
-            Double valor2 = Double.parseDouble(num2);
 
             Double sub = valor1 - valor2;
 
@@ -66,8 +62,6 @@ public class variaveis {
 
         }
         if(simbolo.equals("*")){
-            Double valor1 = Double.parseDouble(num1);
-            Double valor2 = Double.parseDouble(num2);
 
             Double mult = valor1 * valor2;
 
@@ -77,9 +71,6 @@ public class variaveis {
         }
         if(simbolo.equals("/")){
 
-            Double valor1 = Double.parseDouble(num1);
-            Double valor2 = Double.parseDouble(num2);
-
             Double div = valor1 / valor2;
 
             System.out.println("O valor da divisão foi " + div);
@@ -87,7 +78,7 @@ public class variaveis {
             return div;
         }
 
-        return 0.0;
+        throw new NumberFormatException("Simbolo incorreto");
     }
 
 
